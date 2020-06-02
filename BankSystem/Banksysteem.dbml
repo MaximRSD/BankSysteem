@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Banksysteem" Class="BanksysteemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=Banksysteem;Integrated Security=True" SettingsObjectName="BankSystem.Properties.Settings" SettingsPropertyName="BanksysteemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.rekeningen" Member="rekeningens">
+    <Type Name="rekeningen">
+      <Column Name="Nummer" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OpenDatum" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="SluitDatum" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Klanten_rekeningen" Member="Klanten" ThisKey="CustomerID" OtherKey="CustomerID" Type="Klanten" IsForeignKey="true" />
+      <Association Name="typen_rekeningen" Member="typen" ThisKey="TypeID" OtherKey="TypeID" Type="typen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Klanten" Member="Klantens">
+    <Type Name="Klanten">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BSN" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Voorletters" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Voornaam" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Adres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Woonplaats" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefoonnummer" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Achternaam" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PostCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Klanten_rekeningen" Member="rekeningens" ThisKey="CustomerID" OtherKey="CustomerID" Type="rekeningen" />
+    </Type>
+  </Table>
+  <Table Name="dbo.typen" Member="typens">
+    <Type Name="typen">
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Naam" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Rente" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="MaxOpname" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Boete" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="typen_rekeningen" Member="rekeningens" ThisKey="TypeID" OtherKey="TypeID" Type="rekeningen" />
+    </Type>
+  </Table>
+</Database>
