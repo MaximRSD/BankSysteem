@@ -30,12 +30,12 @@ namespace BankSystem
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Insertrekeningen(rekeningen instance);
-    partial void Updaterekeningen(rekeningen instance);
-    partial void Deleterekeningen(rekeningen instance);
     partial void InsertKlanten(Klanten instance);
     partial void UpdateKlanten(Klanten instance);
     partial void DeleteKlanten(Klanten instance);
+    partial void Insertrekeningen(rekeningen instance);
+    partial void Updaterekeningen(rekeningen instance);
+    partial void Deleterekeningen(rekeningen instance);
     partial void Inserttypen(typen instance);
     partial void Updatetypen(typen instance);
     partial void Deletetypen(typen instance);
@@ -71,14 +71,6 @@ namespace BankSystem
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<rekeningen> rekeningens
-		{
-			get
-			{
-				return this.GetTable<rekeningen>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Klanten> Klantens
 		{
 			get
@@ -87,275 +79,19 @@ namespace BankSystem
 			}
 		}
 		
+		public System.Data.Linq.Table<rekeningen> rekeningens
+		{
+			get
+			{
+				return this.GetTable<rekeningen>();
+			}
+		}
+		
 		public System.Data.Linq.Table<typen> typens
 		{
 			get
 			{
 				return this.GetTable<typen>();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.rekeningen")]
-	public partial class rekeningen : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Nummer;
-		
-		private decimal _Saldo;
-		
-		private int _TypeID;
-		
-		private System.DateTime _OpenDatum;
-		
-		private System.Nullable<System.DateTime> _SluitDatum;
-		
-		private int _CustomerID;
-		
-		private EntityRef<Klanten> _Klanten;
-		
-		private EntityRef<typen> _typen;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnNummerChanging(string value);
-    partial void OnNummerChanged();
-    partial void OnSaldoChanging(decimal value);
-    partial void OnSaldoChanged();
-    partial void OnTypeIDChanging(int value);
-    partial void OnTypeIDChanged();
-    partial void OnOpenDatumChanging(System.DateTime value);
-    partial void OnOpenDatumChanged();
-    partial void OnSluitDatumChanging(System.Nullable<System.DateTime> value);
-    partial void OnSluitDatumChanged();
-    partial void OnCustomerIDChanging(int value);
-    partial void OnCustomerIDChanged();
-    #endregion
-		
-		public rekeningen()
-		{
-			this._Klanten = default(EntityRef<Klanten>);
-			this._typen = default(EntityRef<typen>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nummer", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Nummer
-		{
-			get
-			{
-				return this._Nummer;
-			}
-			set
-			{
-				if ((this._Nummer != value))
-				{
-					this.OnNummerChanging(value);
-					this.SendPropertyChanging();
-					this._Nummer = value;
-					this.SendPropertyChanged("Nummer");
-					this.OnNummerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Saldo", DbType="Decimal(18,2) NOT NULL")]
-		public decimal Saldo
-		{
-			get
-			{
-				return this._Saldo;
-			}
-			set
-			{
-				if ((this._Saldo != value))
-				{
-					this.OnSaldoChanging(value);
-					this.SendPropertyChanging();
-					this._Saldo = value;
-					this.SendPropertyChanged("Saldo");
-					this.OnSaldoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeID", DbType="Int NOT NULL")]
-		public int TypeID
-		{
-			get
-			{
-				return this._TypeID;
-			}
-			set
-			{
-				if ((this._TypeID != value))
-				{
-					if (this._typen.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTypeIDChanging(value);
-					this.SendPropertyChanging();
-					this._TypeID = value;
-					this.SendPropertyChanged("TypeID");
-					this.OnTypeIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpenDatum", DbType="Date NOT NULL")]
-		public System.DateTime OpenDatum
-		{
-			get
-			{
-				return this._OpenDatum;
-			}
-			set
-			{
-				if ((this._OpenDatum != value))
-				{
-					this.OnOpenDatumChanging(value);
-					this.SendPropertyChanging();
-					this._OpenDatum = value;
-					this.SendPropertyChanged("OpenDatum");
-					this.OnOpenDatumChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SluitDatum", DbType="Date")]
-		public System.Nullable<System.DateTime> SluitDatum
-		{
-			get
-			{
-				return this._SluitDatum;
-			}
-			set
-			{
-				if ((this._SluitDatum != value))
-				{
-					this.OnSluitDatumChanging(value);
-					this.SendPropertyChanging();
-					this._SluitDatum = value;
-					this.SendPropertyChanged("SluitDatum");
-					this.OnSluitDatumChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="Int NOT NULL")]
-		public int CustomerID
-		{
-			get
-			{
-				return this._CustomerID;
-			}
-			set
-			{
-				if ((this._CustomerID != value))
-				{
-					if (this._Klanten.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCustomerIDChanging(value);
-					this.SendPropertyChanging();
-					this._CustomerID = value;
-					this.SendPropertyChanged("CustomerID");
-					this.OnCustomerIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Klanten_rekeningen", Storage="_Klanten", ThisKey="CustomerID", OtherKey="CustomerID", IsForeignKey=true)]
-		public Klanten Klanten
-		{
-			get
-			{
-				return this._Klanten.Entity;
-			}
-			set
-			{
-				Klanten previousValue = this._Klanten.Entity;
-				if (((previousValue != value) 
-							|| (this._Klanten.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Klanten.Entity = null;
-						previousValue.rekeningens.Remove(this);
-					}
-					this._Klanten.Entity = value;
-					if ((value != null))
-					{
-						value.rekeningens.Add(this);
-						this._CustomerID = value.CustomerID;
-					}
-					else
-					{
-						this._CustomerID = default(int);
-					}
-					this.SendPropertyChanged("Klanten");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="typen_rekeningen", Storage="_typen", ThisKey="TypeID", OtherKey="TypeID", IsForeignKey=true)]
-		public typen typen
-		{
-			get
-			{
-				return this._typen.Entity;
-			}
-			set
-			{
-				typen previousValue = this._typen.Entity;
-				if (((previousValue != value) 
-							|| (this._typen.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._typen.Entity = null;
-						previousValue.rekeningens.Remove(this);
-					}
-					this._typen.Entity = value;
-					if ((value != null))
-					{
-						value.rekeningens.Add(this);
-						this._TypeID = value.TypeID;
-					}
-					else
-					{
-						this._TypeID = default(int);
-					}
-					this.SendPropertyChanged("typen");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -663,6 +399,270 @@ namespace BankSystem
 		{
 			this.SendPropertyChanging();
 			entity.Klanten = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.rekeningen")]
+	public partial class rekeningen : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Nummer;
+		
+		private decimal _Saldo;
+		
+		private int _TypeID;
+		
+		private System.DateTime _OpenDatum;
+		
+		private System.Nullable<System.DateTime> _SluitDatum;
+		
+		private int _CustomerID;
+		
+		private EntityRef<Klanten> _Klanten;
+		
+		private EntityRef<typen> _typen;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnNummerChanging(string value);
+    partial void OnNummerChanged();
+    partial void OnSaldoChanging(decimal value);
+    partial void OnSaldoChanged();
+    partial void OnTypeIDChanging(int value);
+    partial void OnTypeIDChanged();
+    partial void OnOpenDatumChanging(System.DateTime value);
+    partial void OnOpenDatumChanged();
+    partial void OnSluitDatumChanging(System.Nullable<System.DateTime> value);
+    partial void OnSluitDatumChanged();
+    partial void OnCustomerIDChanging(int value);
+    partial void OnCustomerIDChanged();
+    #endregion
+		
+		public rekeningen()
+		{
+			this._Klanten = default(EntityRef<Klanten>);
+			this._typen = default(EntityRef<typen>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nummer", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Nummer
+		{
+			get
+			{
+				return this._Nummer;
+			}
+			set
+			{
+				if ((this._Nummer != value))
+				{
+					this.OnNummerChanging(value);
+					this.SendPropertyChanging();
+					this._Nummer = value;
+					this.SendPropertyChanged("Nummer");
+					this.OnNummerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Saldo", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Saldo
+		{
+			get
+			{
+				return this._Saldo;
+			}
+			set
+			{
+				if ((this._Saldo != value))
+				{
+					this.OnSaldoChanging(value);
+					this.SendPropertyChanging();
+					this._Saldo = value;
+					this.SendPropertyChanged("Saldo");
+					this.OnSaldoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeID", DbType="Int NOT NULL")]
+		public int TypeID
+		{
+			get
+			{
+				return this._TypeID;
+			}
+			set
+			{
+				if ((this._TypeID != value))
+				{
+					if (this._typen.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._TypeID = value;
+					this.SendPropertyChanged("TypeID");
+					this.OnTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpenDatum", DbType="DateTime NOT NULL")]
+		public System.DateTime OpenDatum
+		{
+			get
+			{
+				return this._OpenDatum;
+			}
+			set
+			{
+				if ((this._OpenDatum != value))
+				{
+					this.OnOpenDatumChanging(value);
+					this.SendPropertyChanging();
+					this._OpenDatum = value;
+					this.SendPropertyChanged("OpenDatum");
+					this.OnOpenDatumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SluitDatum", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SluitDatum
+		{
+			get
+			{
+				return this._SluitDatum;
+			}
+			set
+			{
+				if ((this._SluitDatum != value))
+				{
+					this.OnSluitDatumChanging(value);
+					this.SendPropertyChanging();
+					this._SluitDatum = value;
+					this.SendPropertyChanged("SluitDatum");
+					this.OnSluitDatumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="Int NOT NULL")]
+		public int CustomerID
+		{
+			get
+			{
+				return this._CustomerID;
+			}
+			set
+			{
+				if ((this._CustomerID != value))
+				{
+					if (this._Klanten.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCustomerIDChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerID = value;
+					this.SendPropertyChanged("CustomerID");
+					this.OnCustomerIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Klanten_rekeningen", Storage="_Klanten", ThisKey="CustomerID", OtherKey="CustomerID", IsForeignKey=true)]
+		public Klanten Klanten
+		{
+			get
+			{
+				return this._Klanten.Entity;
+			}
+			set
+			{
+				Klanten previousValue = this._Klanten.Entity;
+				if (((previousValue != value) 
+							|| (this._Klanten.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Klanten.Entity = null;
+						previousValue.rekeningens.Remove(this);
+					}
+					this._Klanten.Entity = value;
+					if ((value != null))
+					{
+						value.rekeningens.Add(this);
+						this._CustomerID = value.CustomerID;
+					}
+					else
+					{
+						this._CustomerID = default(int);
+					}
+					this.SendPropertyChanged("Klanten");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="typen_rekeningen", Storage="_typen", ThisKey="TypeID", OtherKey="TypeID", IsForeignKey=true)]
+		public typen typen
+		{
+			get
+			{
+				return this._typen.Entity;
+			}
+			set
+			{
+				typen previousValue = this._typen.Entity;
+				if (((previousValue != value) 
+							|| (this._typen.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._typen.Entity = null;
+						previousValue.rekeningens.Remove(this);
+					}
+					this._typen.Entity = value;
+					if ((value != null))
+					{
+						value.rekeningens.Add(this);
+						this._TypeID = value.TypeID;
+					}
+					else
+					{
+						this._TypeID = default(int);
+					}
+					this.SendPropertyChanged("typen");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	

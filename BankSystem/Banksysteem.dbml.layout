@@ -2,36 +2,36 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Banksysteem">
   <DataContextMoniker Name="/BanksysteemDataContext" />
   <nestedChildShapes>
-    <classShape Id="06959b94-6906-4976-b11c-6aed4e7f1e8b" absoluteBounds="3.5, 0.875, 2, 1.9631982421875">
-      <DataClassMoniker Name="/BanksysteemDataContext/rekeningen" />
-      <nestedChildShapes>
-        <elementListCompartment Id="3367b234-76ff-4a3e-8613-621b722f3e52" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="76129d65-bc48-4dce-847e-096646842b73" absoluteBounds="3.5, 3.875, 2, 2.7324039713541657">
+    <classShape Id="110aff04-9583-4036-ad1e-024e2e731548" absoluteBounds="0.75, 5.375, 2, 2.7324039713541657">
       <DataClassMoniker Name="/BanksysteemDataContext/Klanten" />
       <nestedChildShapes>
-        <elementListCompartment Id="83922010-3eb5-4f31-a397-9e4bb4ef4fee" absoluteBounds="3.515, 4.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2ba4aef0-5a6a-4260-8773-48b043c10a01" absoluteBounds="0.765, 5.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3132acdf-bef3-4aaa-9e85-88d18f32e057" absoluteBounds="0.75, 1, 2, 1.7708968098958331">
+    <classShape Id="fc1ae6f0-9ffc-4d91-9aed-c70455a77298" absoluteBounds="3.5, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/BanksysteemDataContext/rekeningen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef6e758b-6888-4c6e-a0bd-21151e744974" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2fcc489e-88d6-49ae-bea7-bdc4743d7fd0" absoluteBounds="0.75, 1, 2, 1.7708968098958331">
       <DataClassMoniker Name="/BanksysteemDataContext/typen" />
       <nestedChildShapes>
-        <elementListCompartment Id="efaf6e69-69cf-46a3-bdfc-7fc30606d9b4" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2a3a1e72-119d-4156-a655-669ead9189e9" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.5 : 3.875); (4.5 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.74120198567708); (4.5 : 6.74120198567708); (4.5 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BanksysteemDataContext/Klanten/Klanten_rekeningen" />
       <nodes>
-        <classShapeMoniker Id="76129d65-bc48-4dce-847e-096646842b73" />
-        <classShapeMoniker Id="06959b94-6906-4976-b11c-6aed4e7f1e8b" />
+        <classShapeMoniker Id="110aff04-9583-4036-ad1e-024e2e731548" />
+        <classShapeMoniker Id="fc1ae6f0-9ffc-4d91-9aed-c70455a77298" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.88544840494792); (3.5 : 1.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 1.88544840494792); (3.5 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BanksysteemDataContext/typen/typen_rekeningen" />
       <nodes>
-        <classShapeMoniker Id="3132acdf-bef3-4aaa-9e85-88d18f32e057" />
-        <classShapeMoniker Id="06959b94-6906-4976-b11c-6aed4e7f1e8b" />
+        <classShapeMoniker Id="2fcc489e-88d6-49ae-bea7-bdc4743d7fd0" />
+        <classShapeMoniker Id="fc1ae6f0-9ffc-4d91-9aed-c70455a77298" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

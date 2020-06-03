@@ -7,19 +7,33 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid x:Name="dgBanksysteem" Margin="357,60,231,118" AutoGenerateColumns="False" SelectionChanged="dgBanksysteem_SelectionChanged">
+        <Button x:Name="btnVerwijder" Content="Verwijder" HorizontalAlignment="Left" Margin="467,269,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnVerwijder_Click"/>
+        <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="159,269,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnEdit_Click"/>
+        <Button x:Name="btnAdd_Copy" Content="Reset" HorizontalAlignment="Left" Margin="260,269,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnReset_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="219,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Klanten Rekening" Width="219" FontSize="22" FontFamily="Verdana Pro Semibold"/>
+        <DatePicker x:Name="dpSluitDatum" HorizontalAlignment="Left" Margin="363,214,0,0" VerticalAlignment="Top" Width="147"/>
+        <TextBox x:Name="txtSaldo" HorizontalAlignment="Left" Height="23" Margin="191,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+        <TextBox x:Name="txtNummer" HorizontalAlignment="Left" Height="23" Margin="363,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
+        <TextBlock HorizontalAlignment="Left" Margin="101,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Naam"/>
+        <TextBlock HorizontalAlignment="Left" Margin="101,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Rekening"/>
+        <TextBlock HorizontalAlignment="Left" Margin="101,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Saldo"/>
+        <TextBlock HorizontalAlignment="Left" Margin="531,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Sluit Datum"/>
+        <TextBlock HorizontalAlignment="Left" Margin="566,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="IBAN"/>
+        <Button x:Name="btnAdd" Content="Toevoegen" HorizontalAlignment="Left" Margin="363,269,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnAdd_Click"/>
+        <ComboBox x:Name="cmbNaam" HorizontalAlignment="Left" Margin="323,95,0,0" VerticalAlignment="Top" Width="187" Visibility="Visible"/>
+        <ComboBox x:Name="cmbBank" HorizontalAlignment="Left" Margin="323,136,0,0" VerticalAlignment="Top" Width="187"/>
+        <Button x:Name="btnData" Content="Data" HorizontalAlignment="Left" Margin="298,384,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnData_Click"/>
+        <DataGrid x:Name="dgBanksysteem" Height="301" Width="643" Margin="10,28,147,121" AutoGenerateColumns="False" SelectionChanged="dgBanksysteem_SelectionChanged" Visibility="Hidden" IsReadOnly="True" MouseDoubleClick="dgBanksysteem_MouseDoubleClick">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Naam}" ClipboardContentBinding="{x:Null}" Header="Naam"/>
-                <DataGridTextColumn Binding="{Binding Rente}" ClipboardContentBinding="{x:Null}" Header="Rente"/>
-                <DataGridTextColumn Binding="{Binding MaxOpname}" ClipboardContentBinding="{x:Null}" Header="Opname"/>
-                <DataGridTextColumn Binding="{Binding Boete}" ClipboardContentBinding="{x:Null}" Header="Boete"/>
+                <DataGridTextColumn Binding="{Binding Klanten.Voornaam}" ClipboardContentBinding="{x:Null}" Header="Voornaam"/>
+                <DataGridTextColumn Binding="{Binding typen.Naam}" ClipboardContentBinding="{x:Null}" Header="Rekening"/>
+                <DataGridTextColumn Binding="{Binding Saldo}" ClipboardContentBinding="{x:Null}" Header="Saldo"/>
+                <DataGridTextColumn Binding="{Binding Nummer}" ClipboardContentBinding="{x:Null}" Header="IBAN"/>
+                <DataGridTextColumn Binding="{Binding OpenDatum}" ClipboardContentBinding="{x:Null}" Header="Open Datum"/>
+                <DataGridTextColumn Binding="{Binding SluitDatum}" ClipboardContentBinding="{x:Null}" Header="Sluit Datum"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="txtNaam" HorizontalAlignment="Left" Height="23" Margin="103,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtRente" HorizontalAlignment="Left" Height="23" Margin="103,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="btnOpname" HorizontalAlignment="Left" Height="23" Margin="103,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="btnBoete" HorizontalAlignment="Left" Height="23" Margin="103,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnAdd" Content="Toevoegen" HorizontalAlignment="Left" Margin="124,248,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnAdd_Click"/>
-        <ComboBox x:Name="cmbTypen" HorizontalAlignment="Left" Margin="103,60,0,0" VerticalAlignment="Top" Width="187"/>
+        <TextBox x:Name="txtFilter" HorizontalAlignment="Left" Height="23" Margin="101,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtFilter_TextChanged"/>
+        <TextBlock x:Name="txtfil" HorizontalAlignment="Left" Margin="48,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Filter:"/>
     </Grid>
 </UserControl>

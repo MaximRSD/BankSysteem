@@ -9,7 +9,7 @@
     <Grid>
         <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="667" Margin="125,0,0,0"/>
         <StackPanel x:Name="panel" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="125" Grid.RowSpan="2" Background="Black" OpacityMask="White">
-            <Button x:Name="btnMain" Content="Overzicht" Height="45" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnMain_Click"/>
+            <Button x:Name="btnMain" Content="Rekeninghouder" Height="45" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnMain_Click"/>
             <Button x:Name="btnRekeningen" Height="45" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Content="Rekeningen" Click="btnRekeningen_Click"/>
             <Button x:Name="btnKlanten" Height="45" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Content="Klanten" Click="btnKlanten_Click"/>
         </StackPanel>

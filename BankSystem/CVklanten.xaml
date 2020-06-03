@@ -7,7 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Button x:Name="btnKlanten" Content="Toevoegen" HorizontalAlignment="Left" Margin="231,289,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnKlanten_Click"/>
+        <Button x:Name="btnVerwijder" Content="Verwijder" HorizontalAlignment="Left" Margin="20,289,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnVerwijder_Click"/>
+
+
+        <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="125,289,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnEdit_Click"/>
+
+
+        <TextBlock HorizontalAlignment="Left" Margin="219,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Klanten Toevoegen" Width="248" FontSize="22" FontFamily="Verdana Pro Semibold"/>
+
+
+        <Button x:Name="btnKlanten" Content="Toevoegen" HorizontalAlignment="Left" Margin="566,289,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnKlanten_Click"/>
         <TextBox x:Name="txtBSN" HorizontalAlignment="Left" Height="23" Margin="186,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtVoorletters" HorizontalAlignment="Left" Height="23" Margin="186,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtVoornaam" HorizontalAlignment="Left" Height="23" Margin="186,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -16,19 +25,21 @@
         <TextBox x:Name="txtWoonplaats" HorizontalAlignment="Left" Height="23" Margin="359,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtTelefoonnummer" HorizontalAlignment="Left" Height="23" Margin="359,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="359,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="125,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="BSN"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="89,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Voorletters"/>
-        <TextBlock HorizontalAlignment="Left" Margin="93,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Voornaam"/>
-        <TextBlock HorizontalAlignment="Left" Margin="83,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Achternaam"/>
-        <TextBlock HorizontalAlignment="Left" Margin="516,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19"><Run Text="Adres"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="516,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="16"><Run Text="Woonplaats"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="516,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Telefoonnummer"/>
-        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="125,289,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnReset_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="137,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="BSN"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="101,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Voorletters"/>
+        <TextBlock HorizontalAlignment="Left" Margin="101,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Voornaam"/>
+        <TextBlock HorizontalAlignment="Left" Margin="91,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Achternaam"/>
+        <TextBlock HorizontalAlignment="Left" Margin="496,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19"><Run Text="Adres"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="496,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="16"><Run Text="Woonplaats"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="496,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Telefoonnummer"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="231,289,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnReset_Click"/>
         <TextBox x:Name="txtPostCode" HorizontalAlignment="Left" Height="23" Margin="359,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="516,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="PostCode"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="516,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Email"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="496,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="PostCode"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="496,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Email"/><LineBreak/><Run/></TextBlock>
         <Button x:Name="btnData" Content="Data" HorizontalAlignment="Left" Margin="298,384,0,0" VerticalAlignment="Top" Width="75" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Brush Script MT" FontSize="20" Click="btnData_Click"/>
-        <DataGrid x:Name="dgKlanten" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="301" Margin="10,26,0,0" VerticalAlignment="Top" Width="643" IsHitTestVisible="True" Visibility="hidden">
+        <TextBox x:Name="txtFilter" HorizontalAlignment="Left" Height="23" Margin="101,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtFilter_TextChanged" Visibility="hidden"/>
+        <TextBlock x:Name="txtfil" HorizontalAlignment="Left" Margin="48,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Filter:" Visibility="hidden"/>
+        <DataGrid x:Name="dgKlanten" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="301" Margin="10,28,0,0" VerticalAlignment="Top" Width="643" IsHitTestVisible="True" Visibility="Hidden" IsReadOnly="True" MouseDoubleClick="dgKlanten_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding BSN}" ClipboardContentBinding="{x:Null}" Header="BSN"/>
                 <DataGridTextColumn Binding="{Binding Voorletters}" ClipboardContentBinding="{x:Null}" Header="Voorletters"/>
@@ -40,7 +51,7 @@
                 <DataGridTextColumn Binding="{Binding Email}" ClipboardContentBinding="{x:Null}" Header="Email"/>
             </DataGrid.Columns>
         </DataGrid>
-        
+
 
     </Grid>
 </UserControl>
