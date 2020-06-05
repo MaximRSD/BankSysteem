@@ -143,7 +143,7 @@ private void btnEdit_Click(object sender, RoutedEventArgs e)
             string Adres = txtAdres.Text;
             string PostCode = txtPostCode.Text;
 
-            bc.editKlant(SelectedItem.CustomerID, BSN, Voorletters, Voornaam, Achternaam, Woonplaats ,Telefoonnummer, Email, Adres, PostCode);
+            bc.editKlant(SelectedItem.CustomerID, BSN, Voorletters, Voornaam, Achternaam, Adres, Woonplaats, Telefoonnummer, Email, PostCode);
 
             if (dgKlanten.Visibility == Visibility.Hidden) 
             {

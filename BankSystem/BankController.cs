@@ -79,6 +79,8 @@ namespace BankSystem
             P.Telefoonnummer = Telefoonnummer;
             P.Email = Email;
             P.PostCode = PostCode;
+
+            db.SubmitChanges();
         }
 
         public void editRekening(string Nummer, string Saldo, typen type, Klanten klant, DateTime SluitDatum)

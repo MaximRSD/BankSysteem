@@ -2,10 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Banksysteem">
   <DataContextMoniker Name="/BanksysteemDataContext" />
   <nestedChildShapes>
-    <classShape Id="110aff04-9583-4036-ad1e-024e2e731548" absoluteBounds="0.75, 5.375, 2, 2.7324039713541657">
+    <classShape Id="110aff04-9583-4036-ad1e-024e2e731548" absoluteBounds="2.875, 4.5, 2, 2.7324039713541657">
       <DataClassMoniker Name="/BanksysteemDataContext/Klanten" />
       <nestedChildShapes>
-        <elementListCompartment Id="2ba4aef0-5a6a-4260-8773-48b043c10a01" absoluteBounds="0.765, 5.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2ba4aef0-5a6a-4260-8773-48b043c10a01" absoluteBounds="2.89, 4.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="fc1ae6f0-9ffc-4d91-9aed-c70455a77298" absoluteBounds="3.5, 0.875, 2, 1.9631982421875">
@@ -20,14 +20,14 @@
         <elementListCompartment Id="2a3a1e72-119d-4156-a655-669ead9189e9" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 6.74120198567708); (4.5 : 6.74120198567708); (4.5 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.1875 : 4.5); (4.1875 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BanksysteemDataContext/Klanten/Klanten_rekeningen" />
       <nodes>
         <classShapeMoniker Id="110aff04-9583-4036-ad1e-024e2e731548" />
         <classShapeMoniker Id="fc1ae6f0-9ffc-4d91-9aed-c70455a77298" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.88544840494792); (3.5 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.88544840494792); (3.5 : 1.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/BanksysteemDataContext/typen/typen_rekeningen" />
       <nodes>
         <classShapeMoniker Id="2fcc489e-88d6-49ae-bea7-bdc4743d7fd0" />
